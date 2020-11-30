@@ -15,7 +15,7 @@ const characterSchema = new mongoose.Schema({
   },
   class: {
     type: String,
-    enum: ['WARRIOR', 'PALADIN', 'HUNTER', 'ROGUE', 'PRIEST', 'SHAMAN', 'MAGE', 'WARLOCK', 'MONK', 'DRUID', 'DEMON HUNTER', 'DEATH KNIGHT'],
+    enum: ['WARRIOR', 'PALADIN', 'HUNTER', 'ROGUE', 'PRIEST', 'SHAMAN', 'MAGE', 'WARLOCK', 'MONK', 'DRUID', 'DEMON_HUNTER', 'DEATH_KNIGHT'],
   },
   image: {
     type: String,

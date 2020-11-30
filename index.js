@@ -1,7 +1,9 @@
 const { ApolloServer } = require('apollo-server');
 const typeDefs = require('./schema');
-const resolvers = requore('./resolvers');
-const { User, Characters, ItemList, ItemWishlist } = require('./models');
+const resolvers = require('./resolvers');
+const User = require('./models/User');
+const Characters = require('./models/Characters');
+const Items = require('./models/Items');
 
 const server = new ApolloServer({
   typeDefs,
@@ -9,9 +11,8 @@ const server = new ApolloServer({
   context: ({ req }) => ({
     User,
     Characters,
-    ItemList,
-    ItemWishlist,
-  });
+    Items,
+  })
 });
 
 

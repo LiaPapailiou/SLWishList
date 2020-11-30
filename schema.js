@@ -32,9 +32,8 @@ enum ClassType {
   WARLOCK
   MONK
   DRUID
-  DEMON
-  HUNTER
-  DEATH KNIGHT
+  DEMON_HUNTER
+  DEATH_KNIGHT
 }
 
 type User {
