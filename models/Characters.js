@@ -14,13 +14,19 @@ const characterSchema = new mongoose.Schema({
     required: true
   },
   class: {
-    type: String
+    type: String,
+    enum: ['WARRIOR', 'PALADIN', 'HUNTER', 'ROGUE', 'PRIEST', 'SHAMAN', 'MAGE', 'WARLOCK', 'MONK', 'DRUID', 'DEMON HUNTER', 'DEATH KNIGHT'],
   },
   image: {
     type: String,
   },
+  faction: {
+    type: String,
+    enum: ['HORDE', 'ALLIANCE'],
+    default: 'HORDE'
+  }
 });
 
-const Characters = mongoose.model('Characters', characterSchema);
+const Character = mongoose.model('Character', characterSchema);
 
-module.exports = Characters;
+module.exports = Character;

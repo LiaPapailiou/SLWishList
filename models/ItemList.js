@@ -1,22 +1,24 @@
 const mongoose = require('mongoose');
 
-const itemListSchema = new mongoose.Schema({
+const itemSchema = new mongoose.Schema({
   character: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Characters'
+    ref: 'Character'
   },
-  item: [{
-    name: {
-      type: String,
-      require: true,
-    },
-    itemType: {
-      type: String,
-      enum: ['head', 'neck', 'cloak', 'chest', 'gloves', 'bracers', 'legs', 'boots', 'ring one', 'ring two', 'trinket one', 'trinket two']
-    },
-  }]
+  name: {
+    type: String,
+    require: true,
+  },
+  itemType: {
+    type: String,
+    enum: ['HEAD', 'NECK', 'CLOAK', 'CHEST', 'GLOVES', 'BRACERS', 'LEGS', 'BOOTS', ' RING_ONE', 'RING_TWO', 'TRINKET_ONE', 'TRINKET_TWO'],
+    required: true,
+  },
+  isBis: {
+    type: Boolean
+  }
 });
 
-const ItemList = mongoose.model('ItemList', itemListSchema);
+const Item = mongoose.model('Item', itemSchema);
 
-module.exports = ItemList;
+module.exports = Item;
